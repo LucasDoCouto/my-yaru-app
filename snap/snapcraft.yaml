@@ -1,0 +1,28 @@
+name: my-yaru-app
+version: 0.1.0
+summary: Demonstração do Yaru com Flutter
+description: Este aplicativo mostra a integração do Yaru com Flutter
+
+confinement: strict
+base: core22
+grade: stable
+
+slots:
+  dbus-my-yaru-app: # adjust accordingly to your app name
+    interface: dbus
+    bus: session
+    name: org.lucas.my_yaru_app # adjust accordingly to your app name and
+    
+apps:
+  my-yaru-app:
+    command: my_yaru_app
+    extensions: [gnome] # gnome includes the libraries required by flutter
+    plugs:
+    - network
+    slots:
+      - dbus-my-yaru-app
+parts:
+  my-yaru-app:
+    source: .
+    plugin: flutter
+    flutter-target: lib/main.dart # The main entry-point file of the application

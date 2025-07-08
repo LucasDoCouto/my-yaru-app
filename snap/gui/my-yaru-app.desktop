@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=My Yaru App
+Comment=Yaru App using Flutter
+Exec=my-yaru-app 
+Icon=${SNAP}/meta/gui/icon-yaru.png
+Terminal=false
+Type=Application
+Categories=Education;
